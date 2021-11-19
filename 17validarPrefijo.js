@@ -37,22 +37,13 @@ function validarPrefijo(num) {
     for (let i = 0; i < prefijos.length; i++) {
         newArray.push({ [prefijos[i]]: paises[i] }) // creo el array con prefijos y paises
 
-        // if (newArray[i].hasOwnProperty(dosPrimeros)) { // busco en cada objeto (posicion del array) si coincide con los 2primeros 
-        //     console.log(`✅ El número pertenece a ${Object.values(newArray[i])}`)
-        // } else {
-        //     console.log(`❌ El número no pertenece a ${Object.values(newArray[i])}`)
-        // }
-
-        switch (newArray[i].hasOwnProperty(dosPrimeros)) {
-            case true: console.log(`✅ El número pertenece a ${Object.values(newArray[i])}`)
-                break
-            case false: console.log("El número no pertenece a nuestros países")
-                break
+        if (newArray[i].hasOwnProperty(dosPrimeros)) { // busco en cada objeto (posicion del array) si coincide con los 2primeros 
+            return (`✅ El número pertenece a ${Object.values(newArray[i])}`)
+        } else {
+            return (`❌ El número no pertenece a nuestros prefijos`)
         }
-
     }
-
 }
 // OUTPUT ⛔MAL
 // No logro hacer que el output sea una sola linea. Que no se repita por cada iteración.
-console.log(validarPrefijo('5412345678'))
+console.log(validarPrefijo('5112345678'))
